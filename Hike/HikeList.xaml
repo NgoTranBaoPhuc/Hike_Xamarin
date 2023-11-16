@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Hike.HikeList"
+             Title="HikeList">
+    <ScrollView>
+        <VerticalStackLayout Spacing="20" Padding="10,0"
+                         VerticalOptions="Start"
+                         HorizontalOptions="FillAndExpand">
+            <Frame Padding="5" CornerRadius="4">
+                <Label Text="Hike Info" HorizontalTextAlignment="Center"
+                   TextColor="BlueViolet" FontSize="Title" />
+            </Frame>
+            <HorizontalStackLayout HorizontalOptions="FillAndExpand">
+                <Label Text="Hike plan" VerticalOptions="Center" Margin="0, 0, 30, 0"
+                   HorizontalOptions="Start" />
+                <Entry x:Name="txtHike" HorizontalOptions="StartAndExpand"
+                   Placeholder="Enter title of hike" VerticalOptions="Center"/>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout HorizontalOptions="FillAndExpand">
+                <Label Text="Location" VerticalOptions="Center" Margin="0, 0, 30, 0"
+                   HorizontalOptions="Start" />
+                <Entry x:Name="txtLocation" HorizontalOptions="StartAndExpand"
+                   Placeholder="Enter location of hike" VerticalOptions="Center"/>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout HorizontalOptions="FillAndExpand">
+                <Label Text="Date of Hike" VerticalOptions="Center" Margin="0, 0, 30, 0"/>
+                <DatePicker x:Name="dtpDateofBirth" Format="dd/MM/yyyy"/>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout HorizontalOptions="FillAndExpand">
+                <Label Text="Parking available" VerticalOptions="Center" Margin="0, 0, 30, 0"/>
+                <Switch x:Name="swtParking" VerticalOptions="Center">
+                </Switch>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout HorizontalOptions="FillAndExpand">
+                <Label Text="Length of hike" VerticalOptions="Center" Margin="0, 0, 30, 0"
+                   HorizontalOptions="Start" />
+                <Entry x:Name="txtLength" HorizontalOptions="StartAndExpand"
+                   Placeholder="Enter length of hike" VerticalOptions="Center"/>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout HorizontalOptions="FillAndExpand">
+                <Label Text="Level of hike" VerticalOptions="Center" Margin="0, 0, 30, 0"
+                   HorizontalOptions="Start" />
+                <Picker x:Name="cbxLevel" Title="Please select" HorizontalOptions="FillAndExpand" 
+                    VerticalOptions="Center">
+                    <Picker.Items>
+                        <x:String>Beginner</x:String>
+                        <x:String>Advanced</x:String>
+                        <x:String>Expert</x:String>
+                    </Picker.Items>
+                </Picker>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout HorizontalOptions="FillAndExpand">
+                <Label Text="Description" VerticalOptions="Center" Margin="0, 0, 30, 0"
+                   HorizontalOptions="Start" />
+                <Entry x:Name="txtDescription" HorizontalOptions="StartAndExpand"
+                   Placeholder="Enter Description" VerticalOptions="Center"/>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout HorizontalOptions="FillAndExpand">
+                <Label Text="Vehicle" VerticalOptions="Center" Margin="0, 0, 30, 0"
+                   HorizontalOptions="Start" />
+                <Entry x:Name="txtVehicle" HorizontalOptions="StartAndExpand"
+                   Placeholder="Enter Vehicle" VerticalOptions="Center"/>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout HorizontalOptions="FillAndExpand">
+                <Label Text="Member" VerticalOptions="Center" Margin="0, 0, 30, 0"
+                   HorizontalOptions="Start" />
+                <Entry x:Name="txtMember" HorizontalOptions="StartAndExpand"
+                   Placeholder="Enter Number of member" VerticalOptions="Center"/>
+            </HorizontalStackLayout>
+
+            <Button x:Name="btnSubmit" Text="Submit" Clicked="btnSubmit_Clicked"
+                HorizontalOptions="Center"
+                SemanticProperties.Hint="Display info users selected"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

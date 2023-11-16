@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Hike.MainPage">
+    
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="New Hike" Clicked="ToolbarItem_Clicked_AddHike"/>
+    </ContentPage.ToolbarItems>
+    
+    
+    <StackLayout>
+        <SearchBar Placeholder="Search Hike"
+               TextChanged="SearchBar_TextChange"/>
+        <CollectionView x:Name="hikeColletion">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <SwipeView Margin="10">
+                        <SwipeView.RightItems>
+                            <SwipeItem Text="Edit"
+                           BackgroundColor="LightBlue"
+                           CommandParameter="{Binding .}"
+                           Invoked="SwipeItem_Invoke_Edit"/>
+                            <SwipeItem Text="Delete"
+                            BackgroundColor="Red"
+                            CommandParameter="{Binding .}"
+                            Invoked="SwipeItem_Invoke_Delete"/>
+
+
+                        </SwipeView.RightItems>
+                        <SwipeView.LeftItems>
+                            <SwipeItem Text="Detail"
+                                    BackgroundColor="#00BEFF"
+                                    CommandParameter="{Binding .}"
+                                    Invoked="SwipeItem_Invoked_Detail"/>
+                        </SwipeView.LeftItems>
+                        <Frame Padding="10">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Label Text="Hike name:" FontSize="16" FontAttributes="Bold" Grid.Row="0" Grid.Column="0"/>
+                                <Label x:Name="namelbl" FontSize="16" Grid.Row="0" Grid.Column="1" Margin="5, 0, 0, 0"/>
+
+                                <Label Text="Date" FontSize="16" FontAttributes="Bold" Grid.Row="1" Grid.Column="0"/>
+                                <Label Text="{Binding date}" FontSize="16" Grid.Row="1" Grid.Column="1" />
+
+                                <Label Text="Location:" FontSize="16" FontAttributes="Bold" Grid.Row="2" Grid.Column="0"/>
+                                <Label Text="{Binding location}" FontSize="16" Grid.Row="2" Grid.Column="1" />
+
+                                <Label Text="Length:" FontSize="16" FontAttributes="Bold" Grid.Row="3" Grid.Column="0"/>
+                                <Label Text="{Binding length}" FontSize="16" Grid.Row="3" Grid.Column="1" Margin="5, 0, 0, 0"/>
+
+                                <Label Text="Level:" FontSize="16" FontAttributes="Bold" Grid.Row="4" Grid.Column="0"/>
+                                <Label Text="{Binding level}" FontSize="16" Grid.Row="4" Grid.Column="1" />
+                            </Grid>
+                        </Frame>
+                    </SwipeView>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+
+</ContentPage>

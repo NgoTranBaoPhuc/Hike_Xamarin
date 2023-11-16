@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Hike.ObservationList"
+             Title="ObservationList">
+    <ContentPage.Content>
+
+        <StackLayout>
+            <HorizontalStackLayout HorizontalOptions="FillAndExpand">
+                <Label Text="Observation" VerticalOptions="Center" Margin="0, 0, 30, 0"
+        HorizontalOptions="Start" />
+                <Entry x:Name="txtObservation" HorizontalOptions="StartAndExpand"
+        Placeholder="Enter title of observation" VerticalOptions="Center"/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout HorizontalOptions="FillAndExpand">
+                <Label Text="Date of Hike" VerticalOptions="Center" Margin="0, 0, 30, 0"/>
+                <TimePicker x:Name="dtpObservationTime"/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout HorizontalOptions="FillAndExpand">
+                <Label Text="Comment" VerticalOptions="Center" Margin="0, 0, 30, 0"
+        HorizontalOptions="Start" />
+                <Entry x:Name="txtComment" HorizontalOptions="StartAndExpand"
+        Placeholder="Enter comment" VerticalOptions="Center"/>
+            </HorizontalStackLayout>
+            <Button x:Name="btnSubmit" Text="Submit" Clicked="btnSubmit_Clicked"
+                 HorizontalOptions="Center"/>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>
